@@ -1,6 +1,6 @@
 <template>
 	<view :style="{'background-image': 'url('+picc+')',
-                    'background-size': '100% 100%'}">
+                    'background-size': '100% 100%'}" class="aa">
 		<view class="padding" v-if="type1Scenes.length != 0" >
 			<view class="title">
 				手动
@@ -148,8 +148,9 @@
 	page{
 		background-image: url('http://testimg.fuyoust.com/background_0001.png');
 		background-color: #f1f1f1;
+		height: 100%;
 	}
-	.a{
+	.aa{
 		width: 100%;
 		height: 100%;
 	}

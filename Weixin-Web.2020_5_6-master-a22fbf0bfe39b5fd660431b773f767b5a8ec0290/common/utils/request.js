@@ -1,5 +1,5 @@
 // var houstIp = 'https://m1.shanhelinks.com'  http://192.168.0.151:9099 http://192.168.0.147:9099;
-var houstIp = 'https://m1.shanhelinks.com';
+var houstIp = 'http://192.168.0.147:9099';
 var apiUrl = houstIp + '/api/v1/mp';
 var appid = 'wxdd76c88376394864';
 var token = 'token';

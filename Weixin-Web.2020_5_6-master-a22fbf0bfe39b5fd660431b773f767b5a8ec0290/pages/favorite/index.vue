@@ -83,7 +83,7 @@
 								@tap="favoriteHardware(hardware.id, hardware.favorited)"></image>
 						</view>
 						<view class="hardware_pic">
-					<view v-if="hardware.hardwareType==3" ><button @tap="openvideo()"><image :src="hostIp + '/common/showImage/' + hardware.icon" @tap="openvideo"></image></button></view>
+					<view v-if="hardware.hardwareType==3"><button @tap="openvideo()"><image :src="hostIp + '/common/showImage/' + hardware.icon" @tap="openvideo"></image></button></view>
 								<view v-else><image :src="hostIp + '/common/showImage/' + hardware.icon " @tap="toHardwarePage(hardware.id, hardware.hardwareType)"></image></view>
 								
 						</view>

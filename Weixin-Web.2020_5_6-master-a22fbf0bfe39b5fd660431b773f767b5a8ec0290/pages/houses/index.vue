@@ -139,16 +139,18 @@
     page {
       background-image: url('http://testimg.fuyoust.com/background_0001.png');
       background-color: #f1f1f1;
+	  height: 100%;
     }
-
+	.content{
+		height: 100%;
+	}
     .clear {
         clear: both;
     }
-
     .house_list {
         width: auto;
         padding: 30upx;
-
+		height: 100%;
         .house {
             font-size: 35rpx;
             color: white;
@@ -167,7 +169,6 @@
 
         .deleteroom {
             width: 10%;
-
             button::after {
                 border: none;
             }
