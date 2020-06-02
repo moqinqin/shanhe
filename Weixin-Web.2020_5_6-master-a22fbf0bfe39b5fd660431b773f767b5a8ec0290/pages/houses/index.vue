@@ -1,6 +1,7 @@
 <template>
     <view class="content" :style="{'background-image': 'url('+picc+')',
-                    'background-size': '100% 100%'}">
+                    'background-size': '100% 100%',
+'background-repeat':'no-repeat',}" >
         <view class="house_list">
             <view class="house" v-for="(house) in houses" :key="house.id" :style="{'backgroundImage': 'url('+house.backgroundImage+');background-repeat:no-repeat;background-size: scaleToFill'}"
                 @tap.stop="chooseHouse(house.id, house.name)">
@@ -24,7 +25,7 @@
             </view>
 
         </view>
-        <view v-show="accountOwn.mainCount==0" class="addButton">
+        <view v-show="accountOwn.mainCount==0" >
             <image src="../../static/index/add.png" @tap="addHouse"></image>
         </view>
     </view>
@@ -55,12 +56,20 @@
             _this.houses = [];
 			
 			uni.getStorage({
-				key: "backgroundpic",
-				success(e){
-				_this.picc=e.data;
-				console.log(_this.picc);
-				}
-			}),
+							key:"token",
+							success(e){
+								let tokens=e.data.split("_");
+								if(tokens.length == 1){
+									_this.picc='http://testimg.fuyoust.com/background_0001.png'}else {
+										uni.getStorage({
+							key: "backgroundpic",
+							success(e){
+							_this.picc=e.data;
+							console.log(_this.picc);
+							}
+						});}
+							}
+						}),
             uni.getStorage({
                 key: "account",
                 success(e) {

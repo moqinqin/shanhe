@@ -136,11 +136,20 @@
 			_this.scenes = [];
 			_this.hardwares = [];
 			uni.getStorage({
-						key: "backgroundpic",
-						success(e){
-						_this.picc=e.data;
-						console.log(_this.picc);
-						}});
+							key:"token",
+							success(e){
+								let tokens=e.data.split("_");
+								if(tokens.length == 1){
+									_this.picc='http://testimg.fuyoust.com/background_0001.png'}else {
+										uni.getStorage({
+							key: "backgroundpic",
+							success(e){
+							_this.picc=e.data;
+							console.log(_this.picc);
+							}
+						});}
+							}
+						});
 			uni.getStorage({
 				key:"token",
 				success(e){

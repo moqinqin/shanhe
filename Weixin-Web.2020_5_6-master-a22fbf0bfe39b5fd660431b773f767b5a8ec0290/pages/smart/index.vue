@@ -84,11 +84,20 @@
 			let _this = this;
 			_this.picc= [];
 		  uni.getStorage({
-			key: "backgroundpic",
-			success(e){
-			_this.picc=e.data;
-			console.log(_this.picc);
-			}}),
+		  				key:"token",
+		  				success(e){
+		  					let tokens=e.data.split("_");
+		  					if(tokens.length == 1){
+		  						_this.picc='http://testimg.fuyoust.com/background_0001.png'}else {
+		  							uni.getStorage({
+		  				key: "backgroundpic",
+		  				success(e){
+		  				_this.picc=e.data;
+		  				console.log(_this.picc);
+		  				}
+		  			});}
+		  				}
+		  			}),
 	      apiUtils.getScenesByAccount(function(res){
 				_this.type0Scenes = res["0"];//自动
 				_this.type1Scenes = res["1"];//手动
@@ -159,6 +168,8 @@
 		background-color: #F8F8F8;
 		border-radius: 30upx;
 		padding: 30rpx;
+		margin: auto;
+		width: 85%;
 		margin-top: 25rpx;
 	}
 	.clear{

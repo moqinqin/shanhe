@@ -42,6 +42,7 @@
 		methods:{
 			onShow() {
 				let _this=this;
+				// let obj=[{value: "https://hls.open.ys7.com/openlive/e48bf8b18776468495e583a8128c8f69.m3u8"},{url: "https://open.ys7.com/api/lapp/device/ptz/start"},{accessToken: "at.90a79g8d3vphtcao5sfeqund8km7d3gf-39jevs8vir-1vg9bbb-6jyr6a5im"},{deviceSerial:"D15330330"},{channelNo:"4"}];
 				let obj=[{value: "https://hls.open.ys7.com/openlive/e48bf8b18776468495e583a8128c8f69.m3u8"},{url: "https://open.ys7.com/api/lapp/device/ptz/start"},{accessToken: "at.90a79g8d3vphtcao5sfeqund8km7d3gf-39jevs8vir-1vg9bbb-6jyr6a5im"},{deviceSerial:"D15330330"},{channelNo:"4"}];
 				_this.address=obj[0].value;
 				_this.url=obj[1].url;
@@ -107,7 +108,6 @@
 
 <style>
 	.a{ 
-		
 		padding: 200rpx;
 		padding-top: 650rpx;
 		display: flex;

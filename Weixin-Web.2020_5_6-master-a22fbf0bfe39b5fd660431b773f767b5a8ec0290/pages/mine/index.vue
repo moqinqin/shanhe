@@ -1,5 +1,5 @@
 <template>
-	<view  class="a" :style="{'backgroundImage': 'url('+picc+')',
+	<view  class="a"  :style="{'backgroundImage': 'url('+picc+')',
                     'background-size': '100% 100%'}" >
 	<view class="content">
 		<view class="header">
@@ -55,24 +55,30 @@
 				]
 			}
 		},
-		onLoad() {
-		},
 		onShow() {
 			let _this = this;
 			_this.picc=[];
 			uni.hideToast();
-			uni.getStorage({
-				key: "backgroundpic",
-				success(e){
-				_this.picc=e.data;
-				console.log(_this.picc);
-				}
-			});
+			
 			uni.getStorage({
 				key: "account",
 				success(e){
 					_this.hasLogin = true;
 					_this.account = e.data;
+				}
+			});
+			uni.getStorage({
+				key:"token",
+				success(e){
+					let tokens=e.data.split("_");
+					if(tokens.length == 1){
+						_this.picc='http://testimg.fuyoust.com/background_0001.png'}else {uni.getStorage({
+				key: "backgroundpic",
+				success(e){
+				_this.picc=e.data;
+				console.log(_this.picc);
+				}
+			});}
 				}
 			})
 		},
@@ -90,10 +96,8 @@
 				uni.getStorage({
 					key: "token",
 					success(e) {
-						
 						let tokens = e.data.split("_");
-						console.log(tokens.length);
-						
+						console.log(tokens.length);	
 						if( router == 'families' ){
 							if(tokens.length == 1){
 								uni.showToast({
