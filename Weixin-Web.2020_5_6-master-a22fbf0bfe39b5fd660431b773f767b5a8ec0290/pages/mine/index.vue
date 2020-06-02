@@ -59,7 +59,6 @@
 			let _this = this;
 			_this.picc=[];
 			uni.hideToast();
-			
 			uni.getStorage({
 				key: "account",
 				success(e){
@@ -72,7 +71,8 @@
 				success(e){
 					let tokens=e.data.split("_");
 					if(tokens.length == 1){
-						_this.picc='http://testimg.fuyoust.com/background_0001.png'}else {uni.getStorage({
+						_this.picc='http://testimg.fuyoust.com/background_0001.png'}else {
+							uni.getStorage({
 				key: "backgroundpic",
 				success(e){
 				_this.picc=e.data;
