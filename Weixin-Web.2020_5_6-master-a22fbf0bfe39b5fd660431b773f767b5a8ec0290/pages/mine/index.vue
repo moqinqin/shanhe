@@ -15,7 +15,7 @@
 					<view class="username" @click="navToLogin">登录/注册</view>
 				</view>
 			</view>
-			<!-- <view class="setting"><image src="../../static/center/setting.png"></image></view> -->
+			<!-- <view class="setting"><image src="../../static/center/setting.png"></image></view>-->
 		</view>
 
 		<view class="list" style="background-color:white;border-radius: 30upx;" v-for="(list,list_i) in severList" :key="list_i">
